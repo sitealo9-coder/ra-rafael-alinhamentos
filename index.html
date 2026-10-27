@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="RA Rafael Alinhamentos em Itaúna/MG. Alinhamento computadorizado, balanceamento e suspensão. Agende pelo WhatsApp.">
+  <meta name="theme-color" content="#252525">
+  <title>RA Rafael Alinhamentos | Itaúna - MG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #c7c7c7;
+      --panel: #dedede;
+      --panel2: #b8b8b8;
+      --text: #171717;
+      --muted: #454545;
+      --yellow: #ffc928;
+      --yellow2: #e6a900;
+      --line: #a2a2a2
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 Inter, Arial, sans-serif
+    }
+
+    a {
+      color: inherit
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #252525f2;
+      border-bottom: 1px solid #ffc92855;
+      backdrop-filter: blur(12px)
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--yellow);
+      border-radius: 12px;
+      color: var(--yellow);
+      font: 900 21px 'Barlow Condensed', sans-serif;
+      transform: skew(-5deg)
+    }
+
+    .brand strong {
+      display: block;
+      font: 800 24px/.95 'Barlow Condensed', sans-serif;
+      letter-spacing: .5px;
+      color: var(--yellow);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-top: 5px
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      align-items: center
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      color: #eeeeee;
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .navlinks a:hover {
+      color: var(--yellow)
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--yellow);
+      color: #111;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 14px 20px;
+      border-radius: 8px;
+      transition: .2s;
+      box-shadow: 0 8px 28px #ffc9281c
+    }
+
+    .button:hover {
+      background: #ffdb68;
+      transform: translateY(-2px)
+    }
+
+    .button.outline {
+      background: #171717;
+      color: #ffc928;
+      border: 1px solid #171717;
+      box-shadow: none
+    }
+
+    .hero {
+      padding: 78px 0 70px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 75% 20%, #ffc92835, transparent 42%), linear-gradient(130deg, #dedede 0%, #b8b8b8 100%)
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      top: 30px;
+      width: 390px;
+      height: 390px;
+      border: 1px solid #ffc92826;
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px #ffc92808, 0 0 0 58px #ffc92805;
+      pointer-events: none
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 52px;
+      position: relative;
+      z-index: 1
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--yellow)
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Barlow Condensed', Impact, sans-serif;
+      text-transform: uppercase;
+      line-height: .98
+    }
+
+    h1 {
+      font-size: clamp(48px, 6vw, 78px);
+      margin: 22px 0
+    }
+
+    h1 span {
+      color: var(--yellow);
+      display: block
+    }
+
+    .hero p {
+      color: #333;
+      max-width: 550px;
+      font-size: 17px;
+      margin-bottom: 28px
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .hero-image {
+      position: relative
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid #ffc92855;
+      box-shadow: 0 22px 70px #0009;
+      object-fit: contain;
+      aspect-ratio: 4/5;
+      background: #cfcfcf
+    }
+
+    .trust {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #b0b0b0
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 22px 0
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: left
+    }
+
+    .check {
+      color: var(--yellow);
+      font-size: 25px;
+      font-weight: 900
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 13px
+    }
+
+    .trust-item small {
+      color: var(--muted);
+      font-size: 11px
+    }
+
+    section {
+      padding: 78px 0
+    }
+
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 32px
+    }
+
+    .section-head h2 {
+      font-size: clamp(36px, 5vw, 52px);
+      margin: 14px 0
+    }
+
+    .section-head h2 span {
+      color: var(--yellow)
+    }
+
+    .section-head p {
+      color: var(--muted)
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .service {
+      background: linear-gradient(145deg, #eeeeee, #d0d0d0);
+      border: 1px solid #00000018;
+      border-radius: 12px;
+      padding: 23px;
+      min-height: 190px;
+      transition: .2s
+    }
+
+    .service:hover {
+      border-color: #ffc9288c;
+      transform: translateY(-4px)
+    }
+
+    .service .symbol {
+      font-size: 27px;
+      color: var(--yellow);
+      margin-bottom: 18px
+    }
+
+    .service h3 {
+      font-size: 24px;
+      margin-bottom: 10px
+    }
+
+    .service p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    .gallery {
+      background: #bdbdbd
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px
+    }
+
+    .gallery-card {
+      background: var(--panel);
+      border: 1px solid #ffffff12;
+      border-radius: 14px;
+      overflow: hidden
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: contain;
+      display: block;
+      background: #cfcfcf;
+      padding: 12px
+    }
+
+    .gallery-caption {
+      padding: 20px 22px
+    }
+
+    .gallery-caption h3 {
+      font-size: 25px;
+      margin-bottom: 5px
+    }
+
+    .gallery-caption p {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+      align-items: stretch
+    }
+
+    .about-photo {
+      position: relative;
+      border: 1px solid #a0a0a0;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #d4d4d4;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start
+    }
+
+    .about-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 560px;
+      object-fit: contain;
+      background: #d4d4d4
+    }
+
+    .about-photo-label {
+      position: static !important;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      background: #b8b8b8;
+      border-top: 1px solid #ffc928;
+      border-radius: 0;
+      padding: 14px 16px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #171717
+    }
+
+    .about-photo-label span {
+      color: #333;
+      font-weight: 600
+    }
+
+    .about-copy {
+      padding: clamp(24px, 4vw, 42px);
+      background: linear-gradient(145deg, #eeeeee, #d0d0d0);
+      border: 1px solid #00000018;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center
+    }
+
+    .about-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--yellow);
+      color: #111;
+      font-size: 24px;
+      margin-bottom: 20px
+    }
+
+    .about-copy h3 {
+      font-size: 32px;
+      color: var(--yellow);
+      margin-bottom: 14px
+    }
+
+    .about-copy p {
+      color: #333;
+      margin-bottom: 16px
+    }
+
+    .about-copy .about-note {
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .about-copy .button {
+      margin-top: 4px
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .step {
+      border-top: 2px solid var(--yellow);
+      background: var(--panel);
+      padding: 24px;
+      border-radius: 0 0 12px 12px
+    }
+
+    .step span {
+      font: 900 38px 'Barlow Condensed', sans-serif;
+      color: var(--yellow)
+    }
+
+    .step h3 {
+      font-size: 23px;
+      margin: 8px 0
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 35px;
+      background: linear-gradient(120deg, #e8e8e8, #c5c5c5 70%);
+      border: 1px solid #a0a0a0;
+      border-radius: 18px;
+      padding: clamp(24px, 5vw, 48px);
+      align-items: center
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(36px, 5vw, 52px);
+      margin: 14px 0
+    }
+
+    .contact-panel h2 span {
+      color: var(--yellow)
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      margin-bottom: 22px
+    }
+
+    .details {
+      display: grid;
+      gap: 14px
+    }
+
+    .detail {
+      padding: 16px;
+      background: #303030;
+      border: 1px solid #ffc92845;
+      border-radius: 10px
+    }
+
+    .detail strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px
+    }
+
+    .detail p,
+    .detail a {
+      font-size: 14px;
+      color: #eeeeee;
+      text-decoration: none;
+      overflow-wrap: anywhere
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 90px;
+      color: #333;
+      font-size: 12px
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap
+    }
+
+    .float-wa {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      background: #25d366;
+      color: #052d13;
+      text-decoration: none;
+      font-weight: 900;
+      border-radius: 50px;
+      padding: 15px 19px;
+      box-shadow: 0 6px 28px #0009
+    }
+
+    .float-wa:hover {
+      transform: translateY(-2px)
+    }
+
+    @media(max-width:850px) {
+      .about-grid {
+        grid-template-columns: 1fr
+      }
+
+      .about-photo {
+        min-height: 0
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px
+      }
+
+      .hero-image {
+        max-width: 520px
+      }
+
+      .hero {
+        padding-top: 55px
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .service:last-child:nth-child(odd) {
+        grid-column: 1 / -1
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr
+      }
+
+      .navlinks {
+        gap: 12px
+      }
+
+      .navlinks a:not(.button) {
+        display: none
+      }
+    }
+
+    @media(max-width:560px) {
+      .wrap {
+        width: min(100% - 28px, 1120px)
+      }
+
+      .nav {
+        min-height: 66px
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px
+      }
+
+      .brand strong {
+        font-size: 21px
+      }
+
+      .navlinks .button {
+        padding: 10px 12px;
+        font-size: 12px
+      }
+
+      .hero {
+        padding: 48px 0
+      }
+
+      .hero p {
+        font-size: 15px
+      }
+
+      .hero-image img {
+        aspect-ratio: 3/4;
+        max-height: 560px
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 14px
+      }
+
+      .trust-item {
+        justify-content: flex-start
+      }
+
+      .services {
+        grid-template-columns: 1fr
+      }
+
+      .service {
+        min-height: 0
+      }
+
+      .gallery-grid,
+      .how-grid {
+        grid-template-columns: 1fr
+      }
+
+      .gallery-card img {
+        height: auto;
+        max-height: 480px
+      }
+
+      .contact-panel {
+        padding: 24px 18px
+      }
+
+      section {
+        padding: 56px 0
+      }
+
+      .float-wa {
+        right: 12px;
+        bottom: 12px;
+        padding: 13px 16px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="RA Rafael Alinhamentos - início">
+        <span class="brand-mark">RA</span>
+        <span><strong>RA RAFAEL</strong><small>ALINHAMENTOS</small></span>
+      </a>
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a><a href="#galeria">Nossa marca</a><a href="#contato">Contato</a>
+        <a class="button" data-wa href="#">Agendar agora ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Cuidado e confiança para seu carro</div>
+          <h1>Seu carro no <span>lugar certo.</span></h1>
+          <p>O carro está puxando para o lado ou o volante está torto? Na RA Rafael Alinhamentos, você encontra
+            atendimento para cuidar da estabilidade, dos pneus e da manutenção do seu veículo.</p>
+          <div class="actions">
+            <a class="button" data-wa href="#">◉ Falar no WhatsApp</a>
+            <a class="button outline" href="#servicos">Conhecer serviços ↓</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/logo-rafael.jpg" alt="Logo RA Rafael Alinhamentos em cinza e amarelo sobre fundo escuro">
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><span class="check">✓</span>
+          <div><strong>Mais estabilidade</strong><small>Cuide da dirigibilidade</small></div>
+        </div>
+        <div class="trust-item"><span class="check">✓</span>
+          <div><strong>Economia de pneus</strong><small>Manutenção em dia</small></div>
+        </div>
+        <div class="trust-item"><span class="check">✓</span>
+          <div><strong>Segurança e conforto</strong><small>Conte com uma avaliação</small></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="servicos">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">O que fazemos</div>
+          <h2>Serviços para rodar <span>tranquilo.</span></h2>
+          <p>Entre em contato para consultar a disponibilidade e combinar uma avaliação do seu veículo. O orçamento é
+            apresentado antes da realização do serviço.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="symbol">⌁</div>
+            <h3>Alinhamento computadorizado</h3>
+            <p>Para ajudar a manter as rodas alinhadas e o carro seguindo na direção correta.</p>
+          </article>
+          <article class="service">
+            <div class="symbol">◉</div>
+            <h3>Balanceamento</h3>
+            <p>Serviço importante para reduzir vibrações e contribuir para o conforto ao dirigir.</p>
+          </article>
+          <article class="service">
+            <div class="symbol">⚙</div>
+            <h3>Suspensão</h3>
+            <p>Avaliação dos componentes da suspensão conforme a necessidade do carro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Conheça a RA</div>
+          <h2>Conheça nossa <span>oficina.</span></h2>
+          <p>Cuidado, confiança e atenção para você rodar com mais tranquilidade.</p>
+        </div>
+        <div class="about-grid">
+          <article class="about-photo">
+            <img src="assets/divulgacao-rafael.jpg"
+              alt="Material de divulgação da RA Rafael Alinhamentos com os serviços da oficina" loading="lazy">
+            <div class="about-photo-label">RA RAFAEL ALINHAMENTOS <span>• ITAÚNA — MG</span></div>
+          </article>
+          <div class="about-copy">
+            <div class="about-icon">⚒</div>
+            <h3>Quem somos</h3>
+            <p>A RA Rafael Alinhamentos atende em Itaúna há 4 anos, com alinhamento, balanceamento e suspensão.</p>
+            <p>Nossos clientes elogiam a qualidade do serviço, o preço justo, a honestidade e a entrega rápida.</p>
+            <p class="about-note">Quer saber mais ou consultar um serviço? Fale com a oficina pelo WhatsApp.</p>
+            <a class="button" data-wa href="#">Falar com a oficina ↗</a>
+            <a class="button outline" style="margin-top:10px" href="https://search.google.com/local/reviews?placeid=ChIJVxqkDg_NoAARkP6MUAP67uQ"
+              target="_blank" rel="noopener">Confira nossas avaliações no Google ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Simples e direto</div>
+          <h2>Como <span>funciona?</span></h2>
+        </div>
+        <div class="how-grid">
+          <article class="step"><span>01</span>
+            <h3>Chame a oficina</h3>
+            <p>Envie uma mensagem e conte o que percebeu no veículo.</p>
+          </article>
+          <article class="step"><span>02</span>
+            <h3>Combine o atendimento</h3>
+            <p>Converse com a equipe para combinar o melhor dia e horário.</p>
+          </article>
+          <article class="step"><span>03</span>
+            <h3>Avalie o orçamento</h3>
+            <p>Entenda o serviço indicado e aprove antes de qualquer execução.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div>
+            <div class="eyebrow">Vamos cuidar do seu carro?</div>
+            <h2>Fale com a <span>RA Rafael.</span></h2>
+            <p>Tem dúvidas ou precisa de alinhamento, balanceamento ou suspensão? Entre em contato pelo
+              WhatsApp.</p>
+            <a class="button" data-wa href="#">Chamar no WhatsApp ↗</a>
+            <a class="button outline" style="margin-top:10px"
+              href="https://search.google.com/local/reviews?placeid=ChIJVxqkDg_NoAARkP6MUAP67uQ"
+              target="_blank" rel="noopener">Confira nossas avaliações no Google ↗</a>
+          </div>
+          <div class="details">
+            <div class="detail"><strong>Telefone / WhatsApp</strong><a data-phone href="#">(37) 99865-4426</a></div>
+            <div class="detail"><strong>Endereço</strong>
+              <p>Rua Cândido Bernardes, 298 — Morada Nova<br>(Rua do Posto Uai), Itaúna/MG</p>
+            </div>
+            <div class="detail"><strong>Horário de atendimento</strong>
+              <p>Consulte os dias e horários disponíveis pelo WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><span>© <span id="year"></span> RA Rafael Alinhamentos. Todos os direitos
+        reservados.</span><span>Itaúna — Minas Gerais</span></div>
+  </footer>
+  <a class="float-wa" data-wa href="#" aria-label="Falar com a RA Rafael Alinhamentos pelo WhatsApp">WhatsApp ↗</a>
+  <script>
+    // Número retirado da arte enviada: 37 99865-4426. Confirme antes de publicar.
+    const whatsapp = "5537998654426";
+    const mensagem = "Olá! Encontrei o site da RA Rafael Alinhamentos e gostaria de informações sobre os serviços.";
+    document.querySelectorAll("[data-wa]").forEach(link => {
+      link.href = "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(mensagem);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+    document.querySelectorAll("[data-phone]").forEach(link => {
+      link.href = "https://wa.me/" + whatsapp;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
